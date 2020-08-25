@@ -1,30 +1,45 @@
-import isElectron from "is-electron"
 
-export default (function Menu() {
-  if(isElectron()) {
-    const remote = window.remote
-    const Menu = remote.Menu
-    const MenuItem =remote.MenuItem
-  
-    var menu = new Menu()
-    menu.append(new MenuItem({label: 'copy', click: function() {
-      console.log('click')
-    }}))
-    menu.append(new MenuItem({label: 'paste', click: function() {
-      console.log('paste')
-    }}))
-    menu.append(new MenuItem({label: 'delete', click: function() {
-      console.log('delete')
-    }}))
-    // 设置右键查看栏
-    window.addEventListener('contextmenu', function(e) {
-      e.preventDefault()
-      menu.popup(remote.getCurrentWindow())
-    }, false)
 
-    // 设置顶部菜单栏
-    const topMenu = [
-      // {
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+
+var _isElectron = _interopRequireDefault(require("is-electron"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+var _default = function Menu() {
+  if ((0, _isElectron["default"])()) {
+    var remote = window.remote;
+    var _Menu = remote.Menu;
+    var MenuItem = remote.MenuItem;
+    var menu = new _Menu();
+    menu.append(new MenuItem({
+      label: 'copy',
+      click: function click() {
+        console.log('click');
+      }
+    }));
+    menu.append(new MenuItem({
+      label: 'paste',
+      click: function click() {
+        console.log('paste');
+      }
+    }));
+    menu.append(new MenuItem({
+      label: 'delete',
+      click: function click() {
+        console.log('delete');
+      }
+    })); // 设置右键查看栏
+
+    window.addEventListener('contextmenu', function (e) {
+      e.preventDefault();
+      menu.popup(remote.getCurrentWindow());
+    }, false); // 设置顶部菜单栏
+
+    var topMenu = [// {
       //   label: '文件',
       //   submenu: [
       //     {
@@ -77,8 +92,12 @@ export default (function Menu() {
       //     }
       //   ]
       // }
-    ]
-    const customMenu = Menu.buildFromTemplate(topMenu);
-    Menu.setApplicationMenu(customMenu);
+    ];
+
+    var customMenu = _Menu.buildFromTemplate(topMenu);
+
+    _Menu.setApplicationMenu(customMenu);
   }
-})()
+}();
+
+exports["default"] = _default;

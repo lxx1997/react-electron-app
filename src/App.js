@@ -1,6 +1,5 @@
 import React from 'react';
-import './App.css';
-// import {Route, Router, Switch, useHistory} from 'react-router-dom'
+import './App.less';
 import IndexRouter from './router/index'
 
 function App() {
