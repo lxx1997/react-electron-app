@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
+import { Route, Switch, Redirect, HashRouter as Router } from 'react-router-dom'
 import Routers from '../views/index'
 import NotFound from '../error/404'
 import '../electron/menu/index'
@@ -25,6 +25,10 @@ export default () => (
           }></Route>
             <Switch>
               <Route path="/test" component={Routers.Test}></Route>
+              <Route path="/chart" component={Routers.Chart}></Route>
+              <Route path="/setting" component={Routers.Setting}></Route>
+              <Route path="/document" component={Routers.Document}></Route>
+              <Route path="/friends" component={Routers.Friends}></Route>
               <Route component={NotFound}></Route>
             </Switch>
       </Content>

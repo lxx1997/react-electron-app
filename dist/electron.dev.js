@@ -9,6 +9,9 @@ var _require = require('electron'),
 
 var path = require('path');
 
+var _require2 = require('inspector'),
+    url = _require2.url;
+
 function createWindow() {
   // Create the browser window.
   // 隐藏菜单栏
@@ -29,9 +32,15 @@ function createWindow() {
   }); // and load the index.html of the app.
   // mainWindow.loadFile(path.join(__dirname, 'index.html'))
   // Open the DevTools.
+  // mainWindow.webContents.openDevTools()
+  // mainWindow.loadURL('http://localhost:3000/')
+  // 加载应用----react 打包
 
-  mainWindow.webContents.openDevTools();
-  mainWindow.loadURL('http://localhost:3000/'); // // 添加快捷键
+  mainWindow.loadURL(url.format({
+    pathname: path.join(__dirname, './build/index.html'),
+    protocol: 'file:',
+    slashes: true
+  })); // // 添加快捷键
   // globalShortcut.unregisterAll()
   // globalShortcut.register('ctrl+q', function() {
   //   app.quit()

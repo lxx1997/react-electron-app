@@ -1,8 +1,10 @@
 {
   "name": "react-electron-app",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
+  "author": "lxx",
   "main": "electron.js",
+  "homepage":"./",
   "dependencies": {
     "@babel/core": "7.9.0",
     "@babel/plugin-proposal-decorators": "^7.10.5",
@@ -76,8 +78,9 @@
   "scripts": {
     "electron": "electron .",
     "start": "craco start",
-    "build": "craco scripts/build.js",
-    "test": "craco scripts/test.js"
+    "build": "craco build",
+    "test": "craco test",
+    "package": "electron-packager ./build package --win --out package/ --overwrite"
   },
   "eslintConfig": {
     "extends": "react-app"
