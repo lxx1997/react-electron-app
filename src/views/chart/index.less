@@ -1,0 +1,93 @@
+.chart-sidebar-left {
+  background-color: white !important;
+  width: 200px !important;
+}
+.chart-content {
+  height: 100%;
+  background-color: #ffffff;
+  .ant-input-search {
+    height: 23px;
+    .ant-input-wrapper {
+      height: 23px;
+      .ant-input {
+        height: 23px;
+        font-size: 12px;
+        line-height: 23px;
+      }
+      .ant-input-group-addon:hover{
+        border-top-color: rgb(95, 187, 154);
+        border-bottom-color: rgb(95, 187, 154);
+        border-right-color: rgb(95, 187, 154);
+      }
+      .ant-input-search-button, .ant-input-group-addon {
+        height: 23px;
+        width: 16px;
+        padding: 0;
+        background-color: #ffffff;
+        color: #999999;
+        border-left: none;
+        border-top-color: rgba(0, 0, 0, 0.2);
+        border-bottom-color: rgba(0, 0, 0, 0.2);
+        border-right-color: rgba(0, 0, 0, 0.2);
+
+        .anticon-search {
+          margin-top: -10px;
+        }
+      }
+    }
+  }
+}
+
+// sidebar/index.js
+.chart-room {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-content: space-between;
+  overflow-y: auto;
+  .chart-room-list {
+    flex: 1;
+    overflow-y: auto;
+    &-children {
+      &:hover {
+        background-color: rgba(27, 3, 3, 0.1);
+      }
+      display: flex;
+      justify-content: space-between;
+      height: 50px;
+      cursor: pointer;
+      &-avatar {
+        width: 50px;
+        height: 50px;
+        margin-top: 5px;
+        margin-left: 5px;
+      }
+      &-detail {
+        overflow: hidden;
+        flex: 1;
+        padding-left: 10px;
+        height: 50px;
+        p:nth-child(1) {
+          line-height: 20px;
+          font-size: 14px;
+          font-weight: bold;
+          text-align: left;
+          margin-top: 5px;
+        }
+        p:nth-child(2) {
+          text-align: left;
+          line-height: 20px;
+          font-size: 12px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          margin-top: 5px;
+        }
+      }
+    }
+    .is-check {
+      background-color: rgba(27, 3, 3, 0.2);
+    }
+  }
+}

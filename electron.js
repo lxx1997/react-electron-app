@@ -2,7 +2,7 @@
 // var window = new Window()
 const {app, BrowserWindow, Menu} = require('electron')
 const path = require('path')
-const { url } = require('inspector')
+// const { url } = require('url')
 
 function createWindow () {
   // Create the browser window.
@@ -28,14 +28,14 @@ function createWindow () {
   // Open the DevTools.
   // mainWindow.webContents.openDevTools()
 
-  // mainWindow.loadURL('http://localhost:3000/')
+  mainWindow.loadURL('http://localhost:3000/')
   // 加载应用----react 打包
 
-　　mainWindow.loadURL(url.format({
-  　　pathname: path.join(__dirname, './build/index.html'),
-  　　protocol: 'file:',
-  　　slashes: true
-　　}))
+// 　　mainWindow.loadURL(url.format({
+//   　　pathname: path.join(__dirname, './build/index.html'),
+//   　　protocol: 'file:',
+//   　　slashes: true
+// 　　}))
 
 
 

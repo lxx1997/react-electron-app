@@ -7,10 +7,8 @@ var _require = require('electron'),
     BrowserWindow = _require.BrowserWindow,
     Menu = _require.Menu;
 
-var path = require('path');
+var path = require('path'); // const { url } = require('url')
 
-var _require2 = require('inspector'),
-    url = _require2.url;
 
 function createWindow() {
   // Create the browser window.
@@ -33,14 +31,14 @@ function createWindow() {
   // mainWindow.loadFile(path.join(__dirname, 'index.html'))
   // Open the DevTools.
   // mainWindow.webContents.openDevTools()
-  // mainWindow.loadURL('http://localhost:3000/')
-  // 加载应用----react 打包
 
-  mainWindow.loadURL(url.format({
-    pathname: path.join(__dirname, './build/index.html'),
-    protocol: 'file:',
-    slashes: true
-  })); // // 添加快捷键
+  mainWindow.loadURL('http://localhost:3000/'); // 加载应用----react 打包
+  // 　　mainWindow.loadURL(url.format({
+  //   　　pathname: path.join(__dirname, './build/index.html'),
+  //   　　protocol: 'file:',
+  //   　　slashes: true
+  // 　　}))
+  // // 添加快捷键
   // globalShortcut.unregisterAll()
   // globalShortcut.register('ctrl+q', function() {
   //   app.quit()
