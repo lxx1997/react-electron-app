@@ -19,6 +19,10 @@ export default class Sidebar extends Component {
             <p><Link to="/friends">好友</Link></p>
             <p><Link to="/setting">设置</Link></p>
           </div>
+          <div className="sidebar-setting">
+            <p><Link to="/idcard">身份证识别</Link></p>
+            <p><Link to="/setting">设置</Link></p>
+          </div>
       </div>
     )
   }

@@ -4,7 +4,7 @@
   "private": true,
   "author": "lxx",
   "main": "electron.js",
-  "homepage":"./",
+  "homepage": "./",
   "dependencies": {
     "@babel/core": "7.9.0",
     "@babel/plugin-proposal-decorators": "^7.10.5",
@@ -16,6 +16,7 @@
     "@typescript-eslint/eslint-plugin": "^2.10.0",
     "@typescript-eslint/parser": "^2.10.0",
     "antd": "^4.6.1",
+    "axios": "^0.20.0",
     "babel-eslint": "10.1.0",
     "babel-jest": "^24.9.0",
     "babel-loader": "8.1.0",
@@ -23,7 +24,6 @@
     "babel-preset-react-app": "^9.1.2",
     "camelcase": "^5.3.1",
     "case-sensitive-paths-webpack-plugin": "2.3.0",
-    "craco-less": "^1.17.0",
     "css-loader": "3.4.2",
     "customize-cra": "^1.0.0",
     "dotenv": "8.2.0",
@@ -45,6 +45,8 @@
     "jest-environment-jsdom-fourteen": "1.0.1",
     "jest-resolve": "24.9.0",
     "jest-watch-typeahead": "0.4.2",
+    "less": "^3.12.2",
+    "less-loader": "^7.0.0",
     "mini-css-extract-plugin": "0.9.0",
     "optimize-css-assets-webpack-plugin": "5.0.3",
     "pnp-webpack-plugin": "1.6.4",
@@ -60,7 +62,6 @@
     "react-dom": "^16.13.1",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
-    "react-script": "^2.0.5",
     "react-scripts": "^3.4.3",
     "resolve": "1.15.0",
     "resolve-url-loader": "3.1.1",
@@ -77,9 +78,10 @@
   },
   "scripts": {
     "electron": "electron .",
-    "start": "craco start",
-    "build": "craco build",
-    "test": "craco test",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "eject": "react-scripts eject",
+    "test": "react-scripts test",
     "package": "electron-packager ./build package --win --out package/ --overwrite"
   },
   "eslintConfig": {
@@ -153,6 +155,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
     "is-electron": "^2.2.0"
   }
 }

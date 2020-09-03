@@ -29,6 +29,7 @@ export default () => (
               <Route path="/setting" component={Routers.Setting}></Route>
               <Route path="/document" component={Routers.Document}></Route>
               <Route path="/friends" component={Routers.Friends}></Route>
+              <Route path="/idcard" component={Routers.Idcard}></Route>
               <Route component={NotFound}></Route>
             </Switch>
       </Content>

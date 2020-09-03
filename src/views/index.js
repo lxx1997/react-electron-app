@@ -4,11 +4,13 @@ import Chart from './chart/index'
 import Document from './document/index'
 import Friends from './friends/index'
 import Setting from './setting/index'
+import Idcard from './idcard/index'
 export default {
   Test,
   Sidebar,
   Chart,
   Friends,
   Document,
-  Setting
+  Setting,
+  Idcard
 }

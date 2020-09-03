@@ -124,7 +124,6 @@ export default class Chart extends Component {
     console.log(e)
   }
   handleClickChartRoom(id) {
-    console.log(id)
     this.roomList = this.roomList.map(item => {
       item.checked = item.roomId === id
       return item
