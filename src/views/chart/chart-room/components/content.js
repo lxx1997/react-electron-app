@@ -6,7 +6,7 @@ export default class ChartRoom extends Component {
     super(props)
     this.addMessage = this.addMessage.bind(this)
     this.state = {
-      messages: ['2323423']
+      messages: []
     }
   }
   addMessage(value) {
@@ -23,7 +23,7 @@ export default class ChartRoom extends Component {
         {
           messages.map((item, index) => {
             return (
-              <p key={index}>{item}</p>
+              <div key={index} dangerouslySetInnerHTML={{ __html:item}}></div>
             )
           })
         }

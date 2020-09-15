@@ -8,114 +8,7 @@ export default class Chart extends Component {
   constructor(props) {
     super(props)
     this.searchText = null
-    this.avatar = require('../../../assets/img/avator.jpg')
-    this.roomList = [
-      {
-        roomId: 1,
-        roomName: 123,
-        roomAvatar: this.avatar,
-        lastestMsg: '1231231232',
-        checked: false
-      },
-      {
-        roomId: 2,
-        roomName: '123',
-        roomAvatar: this.avatar,
-        lastestMsg: '1231231232',
-        checked: true
-      },
-      {
-        roomId: 3,
-        roomName: '123',
-        roomAvatar: this.avatar,
-        lastestMsg: '1231231232',
-        checked: false
-      },
-      {
-        roomId: 4,
-        roomName: '123',
-        roomAvatar: this.avatar,
-        lastestMsg: '1231231232',
-        checked: false
-      },
-      {
-        roomId: 5,
-        roomName: '123',
-        roomAvatar: this.avatar,
-        lastestMsg: '1231231232',
-        checked: false
-      },
-      {
-        roomId: 6,
-        roomName: '123',
-        roomAvatar: this.avatar,
-        lastestMsg: '1231231232',
-        checked: false
-      },
-      {
-        roomId: 7,
-        roomName: '123',
-        roomAvatar: this.avatar,
-        lastestMsg: '1231231232',
-        checked: false
-      },
-      {
-        roomId: 8,
-        roomName: '123',
-        roomAvatar: this.avatar,
-        lastestMsg: '1231231232',
-        checked: false
-      },
-      {
-        roomId: 9,
-        roomName: '123',
-        roomAvatar: this.avatar,
-        lastestMsg: '1231231232',
-        checked: false
-      },
-      {
-        roomId: 10,
-        roomName: '123',
-        roomAvatar: this.avatar,
-        lastestMsg: '1231231232',
-        checked: false
-      },
-      {
-        roomId: 11,
-        roomName: '123',
-        roomAvatar: this.avatar,
-        lastestMsg: '1231231232',
-        checked: false
-      },
-      {
-        roomId: 12,
-        roomName: '123',
-        roomAvatar: this.avatar,
-        lastestMsg: '1231231232',
-        checked: false
-      },
-      {
-        roomId: 13,
-        roomName: '123',
-        roomAvatar: this.avatar,
-        lastestMsg: '1231231232',
-        checked: false
-      },
-      {
-        roomId: 14,
-        roomName: '123',
-        roomAvatar: this.avatar,
-        lastestMsg: '1231231232',
-        checked: false
-      },
-      {
-        roomId: 15,
-        roomName: '123',
-        roomAvatar: this.avatar,
-        lastestMsg: '1231231232',
-        checked: false
-      }
-    ]
+    this.roomList = props.roomList
   }
   handleSearch(e) {
     console.log(e)
@@ -123,14 +16,8 @@ export default class Chart extends Component {
   handleEnterButton(e) {
     console.log(e)
   }
-  handleClickChartRoom(id) {
-    this.roomList = this.roomList.map(item => {
-      item.checked = item.roomId === id
-      return item
-    })
-    this.setState({
-      roomList: this.roomList
-    })
+  handleClickChartRoom(id, index) {
+    this.props.changeRoom(index)
   }
   render() {
     return ( 
@@ -145,7 +32,7 @@ export default class Chart extends Component {
         <div className="chart-room-list">
           {
             this.roomList.map((item, index) => (
-              <div onClick={this.handleClickChartRoom.bind(this, item.roomId)} key={index} className={ item.checked ? `chart-room-list-children is-check` : 'chart-room-list-children'}>
+              <div onClick={this.handleClickChartRoom.bind(this, item.roomId, index)} key={index} className={ item.checked ? `chart-room-list-children is-check` : 'chart-room-list-children'}>
                 <div className="chart-room-list-children-avatar">
                   <Avatar shape="square" size={40} src={item.roomAvatar}></Avatar>
                 </div>

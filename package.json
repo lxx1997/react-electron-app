@@ -78,10 +78,10 @@
   },
   "scripts": {
     "electron": "electron .",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "eject": "react-scripts eject",
-    "test": "react-scripts test",
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "eject": "react-app-rewired eject",
+    "test": "react-app-rewired test",
     "package": "electron-packager ./build package --win --out package/ --overwrite"
   },
   "eslintConfig": {
@@ -109,6 +109,9 @@
     ],
     "setupFiles": [
       "react-app-polyfill/jsdom"
+    ],
+    "setupFilesAfterEnv": [
+      "<rootDir>/src/setupTests.js"
     ],
     "testMatch": [
       "<rootDir>/src/**/__tests__/**/*.{js,jsx,ts,tsx}",
@@ -153,6 +156,8 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "^7.10.4",
-    "is-electron": "^2.2.0"
+    "babel-plugin-import": "^1.13.0",
+    "is-electron": "^2.2.0",
+    "react-app-rewire-less": "^2.1.3"
   }
 }

@@ -10,12 +10,12 @@ export default class ChartRoom extends Component {
     this.values = ''
   }
   handleSendMessage(value) {
-    console.log(value)
     this.refs.chartRoomMsgContent.addMessage(value)
   }
   render() {
+    const {item,index} = this.props
     return (
-      <Layout className="chart-room-msg">
+      <Layout className="chart-room-msg" style={item.checked ? {zIndex: '999'} : {}}>
         <Header className="chart-room-msg-header">
           <span>{`<`}</span>
           <span>this is chat room title</span>
@@ -25,6 +25,7 @@ export default class ChartRoom extends Component {
         </Content>
         <Footer className="chart-room-msg-footer">
           <ChartRoomInput
+            index={index}
             sendMessage={this.handleSendMessage.bind(this)}
           ></ChartRoomInput>
         </Footer>

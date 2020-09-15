@@ -91,10 +91,15 @@
     }
   }
 }
-
+.chart-sidebar-right-content {
+  position: relative;
+  height: 100%;
+}
 // ./chart-room/index
 .chart-room-msg {
   height: 100%;
+  position: absolute;
+  width: 100%;
   &-header {
     background-color: #ffffff;
     border-bottom: 1px dotted #999999;
@@ -138,6 +143,7 @@
       align-content: space-between;
       &-textarea {
         flex: 1;
+        overflow: auto;
       }
       &-button {
         height: 35px;
